@@ -36,7 +36,7 @@ install -D -m755 target/release/sniffnet %{buildroot}/usr/bin/sniffnet
 install -m644 resources/packaging/linux/sniffnet.desktop -pD %{buildroot}/usr/share/applications/sniffnet.desktop
 install -m644 resources/logos/raw/icon.png -pD %{buildroot}/usr/share/pixmaps/sniffnet.png
 strip %{buildroot}/usr/bin/sniffnet
-cp -r /usr/lib64/lib{cap,libpsx}.so.* %{buildroot}/usr/lib64/
+cp -r /usr/lib64/lib{cap,pcap,libpsx}.so.* %{buildroot}/usr/lib64/
 
 %files
 %defattr(-,root,root,-)
@@ -44,4 +44,5 @@ cp -r /usr/lib64/lib{cap,libpsx}.so.* %{buildroot}/usr/lib64/
 /usr/share/applications/sniffnet.desktop
 /usr/share/pixmaps/sniffnet.png
 /usr/lib64/libcap.so.*
+/usr/lib64/libpcap.so*
 /usr/lib64/libpsx.so.*
