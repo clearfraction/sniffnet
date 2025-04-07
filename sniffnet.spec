@@ -7,7 +7,7 @@ Summary:        Application to comfortably monitor your network traffic
 License:        MIT
 BuildRequires:  rustc
 BuildRequires:  pkg-config
-BuildRequires:  alsa-lib-dev alsa-tools-dev libcap-dev zenity libpcap-dev
+BuildRequires:  alsa-lib-dev alsa-tools-dev libcap-bin libcap-dev zenity libpcap-dev
 BuildRequires:  libxcb-dev
 BuildRequires:  freetype-dev
 BuildRequires:  xclip
@@ -36,6 +36,9 @@ install -D -m755 target/release/sniffnet %{buildroot}/usr/bin/sniffnet
 install -m644 resources/packaging/linux/sniffnet.desktop -pD %{buildroot}/usr/share/applications/sniffnet.desktop
 install -m644 resources/logos/raw/icon.png -pD %{buildroot}/usr/share/pixmaps/sniffnet.png
 strip %{buildroot}/usr/bin/sniffnet
+setcap cap_net_raw,cap_net_admin=eip %{buildroot}/usr/bin/sniffnet
+
+
 mkdir -p  %{buildroot}/usr/lib64
 cp -r /usr/lib64/lib{cap,pcap,psx}.so.* %{buildroot}/usr/lib64/
 
