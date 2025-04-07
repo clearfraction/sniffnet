@@ -7,7 +7,7 @@ Summary:        Application to comfortably monitor your network traffic
 License:        MIT
 BuildRequires:  rustc
 BuildRequires:  pkg-config
-BuildRequires:  alsa-lib-dev alsa-tools-dev libcap-dev zenity
+BuildRequires:  alsa-lib-dev alsa-tools-dev libcap-dev zenity libpcap-dev
 BuildRequires:  libxcb-dev
 BuildRequires:  freetype-dev
 BuildRequires:  xclip
