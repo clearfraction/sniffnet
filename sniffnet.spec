@@ -24,6 +24,7 @@ A hardware-accelerated GPU terminal emulator powered by WebGPU.
 
 %prep
 %setup -q -n sniffnet-%{version}
+sed -i 's|Exec=/usr/bin/sniffnet|Exec=sniffnet|' resources/packaging/linux/sniffnet.desktop
 
 %build
 unset http_proxy https_proxy no_proxy
